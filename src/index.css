@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* ==========================================================================
+       VFS GLOBAL DESIGN SYSTEM - DESIGN TOKENS & CSS VARIABLES
+       ========================================================================== */
+    --color-primary-navy: #0A192F;       /* Main headers, primary nav, footers, primary text */
+    --color-surface-white: #FFFFFF;      /* Main background cards & high-readability zones */
+    --color-neutral-bg: #F4F6F8;         /* Subtle section backgrounds, page body */
+    --color-neutral-muted: #8892B0;      /* Secondary metadata text, placeholders */
+    --color-neutral-border: #E2E8F0;     /* Card borders, grid dividers */
+    --color-interactive-blue: #0066FF;   /* Interactive links, active tabs, focus rings */
+    --color-interactive-blue-hover: #0052CC;
+    --color-cta-orange: #FF9900;         /* High-priority CTA buttons, booking triggers */
+    --color-cta-orange-hover: #E68A00;   /* Hover state for primary CTAs */
+    --color-alert-banner: #FFF7ED;       /* Orange light alert container */
+    --color-alert-border: #FFD699;
+    
+    /* Semantic Status Colors */
+    --color-success: #10B981;
+    --color-success-bg: #ECFDF5;
+    --color-warning: #F59E0B;
+    --color-warning-bg: #FEF3C7;
+    --color-danger: #EF4444;
+    --color-danger-bg: #FEF2F2;
+
+    /* Typography & Sizing */
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Elevation & Shadows */
+    --shadow-subtle: 0 1px 3px 0 rgba(10, 25, 47, 0.05), 0 1px 2px -1px rgba(10, 25, 47, 0.05);
+    --shadow-card: 0 4px 6px -1px rgba(10, 25, 47, 0.07), 0 2px 4px -2px rgba(10, 25, 47, 0.05);
+    --shadow-elevated: 0 12px 24px -4px rgba(10, 25, 47, 0.12), 0 4px 6px -2px rgba(10, 25, 47, 0.04);
+    --shadow-glow-blue: 0 0 0 3px rgba(0, 102, 255, 0.25);
+    --shadow-glow-orange: 0 0 0 3px rgba(255, 153, 0, 0.3);
+
+    /* Radii */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-full: 9999px;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-primary-navy);
+  background-color: var(--color-neutral-bg);
+  min-height: 100vh;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Utilities for precise brand palette matching */
+.bg-vfs-navy { background-color: #0A192F; }
+.text-vfs-navy { color: #0A192F; }
+.border-vfs-navy { border-color: #0A192F; }
+
+.bg-vfs-blue { background-color: #0066FF; }
+.text-vfs-blue { color: #0066FF; }
+.border-vfs-blue { border-color: #0066FF; }
+.hover\:bg-vfs-blue-dark:hover { background-color: #0052CC; }
+
+.bg-vfs-orange { background-color: #FF9900; }
+.text-vfs-orange { color: #FF9900; }
+.border-vfs-orange { border-color: #FF9900; }
+.hover\:bg-vfs-orange-dark:hover { background-color: #E68A00; }
+
+.bg-vfs-grey-light { background-color: #F4F6F8; }
+.text-vfs-grey-muted { color: #8892B0; }
+.border-vfs-border { border-color: #E2E8F0; }
+
+/* Custom scanner laser animation */
+@keyframes scan-laser {
+  0% { top: 0%; opacity: 0.8; }
+  50% { top: 96%; opacity: 1; }
+  100% { top: 0%; opacity: 0.8; }
+}
+
+.animate-scan-laser {
+  animation: scan-laser 2.4s ease-in-out infinite;
+}
+
+/* Biometric pulse ring */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F6F8;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Global Visa Processing Platform",
+  "description": "Dual-portal enterprise blueprint & web application for Visa Applicants and VFS Operations Staff featuring passport scanning, biometric verification, digital signatures, compliance checklists, high-throughput queues, and bot-threat telemetry.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
